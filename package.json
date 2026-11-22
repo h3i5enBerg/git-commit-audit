@@ -1,0 +1,45 @@
+{
+  "name": "@h3i5enberg/git-commit-audit",
+  "version": "1.0.0",
+  "description": "Zero-runtime-dependency Git commit history auditor and Conventional Commits health checker.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "bin": {
+    "git-commit-audit": "./bin/cli.js"
+  },
+  "files": [
+    "dist",
+    "bin",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format cjs,esm --dts --clean",
+    "test": "npx tsx --test tests/*.test.ts"
+  },
+  "keywords": [
+    "git",
+    "audit",
+    "conventional-commits",
+    "commit-linter",
+    "code-quality",
+    "git-history",
+    "cli"
+  ],
+  "author": "h3i5enBerg <nirajssatam@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^22.10.5",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
