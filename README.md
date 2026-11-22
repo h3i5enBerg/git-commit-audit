@@ -1,12 +1,12 @@
-# @h3i5enberg/git-commit-audit
+# @nirajsatam/git-commit-audit
 
 > Zero-runtime-dependency Git commit history auditor, Conventional Commits health checker, and developer hygiene scoring engine.
 
-[![npm version](https://img.shields.io/npm/v/@h3i5enberg/git-commit-audit.svg)](https://www.npmjs.com/package/@h3i5enberg/git-commit-audit)
+[![npm version](https://img.shields.io/npm/v/@nirajsatam/git-commit-audit.svg)](https://www.npmjs.com/package/@nirajsatam/git-commit-audit)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Node.js CI](https://img.shields.io/badge/Node.js-%3E%3D18.0.0-brightgreen.svg)]()
 
-`@h3i5enberg/git-commit-audit` inspects your Git commit history directly through safe native child processes without third-party runtime dependencies. It evaluates Conventional Commits compliance, flags lazy or ambiguous commit messages, detects risky bulk file changes, and calculates a 0–100 health score with letter grades (A–F).
+`@nirajsatam/git-commit-audit` inspects your Git commit history directly through safe native child processes without third-party runtime dependencies. It evaluates Conventional Commits compliance, flags lazy or ambiguous commit messages, detects risky bulk file changes, and calculates a 0–100 health score with letter grades (A–F).
 
 ---
 
@@ -26,10 +26,10 @@
 
 ```bash
 # Global installation for CLI usage
-npm install -g @h3i5enberg/git-commit-audit
+npm install -g @nirajsatam/git-commit-audit
 
 # Or install locally in your project
-npm install --save-dev @h3i5enberg/git-commit-audit
+npm install --save-dev @nirajsatam/git-commit-audit
 ```
 
 ---
@@ -40,22 +40,22 @@ Run without installing via `npx`:
 
 ```bash
 # Audit current repository
-npx @h3i5enberg/git-commit-audit
+npx @nirajsatam/git-commit-audit
 
 # Audit a specific directory or repo path
-npx @h3i5enberg/git-commit-audit /path/to/repo
+npx @nirajsatam/git-commit-audit /path/to/repo
 
 # Output machine-readable JSON
-npx @h3i5enberg/git-commit-audit --json
+npx @nirajsatam/git-commit-audit --json
 
 # Enforce a minimum score in CI (exits with code 1 if score < 85)
-npx @h3i5enberg/git-commit-audit --min-score=85
+npx @nirajsatam/git-commit-audit --min-score=85
 
 # Limit audit to the last 50 commits
-npx @h3i5enberg/git-commit-audit --max-commits=50
+npx @nirajsatam/git-commit-audit --max-commits=50
 
 # Custom bulk file threshold (default: 25)
-npx @h3i5enberg/git-commit-audit --bulk-threshold=15
+npx @nirajsatam/git-commit-audit --bulk-threshold=15
 ```
 
 ### Example CLI Output
@@ -91,7 +91,7 @@ Issues Found: 2
 ### TypeScript / ESM
 
 ```typescript
-import { auditRepo, type AuditReport } from '@h3i5enberg/git-commit-audit';
+import { auditRepo, type AuditReport } from '@nirajsatam/git-commit-audit';
 
 const report: AuditReport = auditRepo('./path/to/repo', {
   maxCommits: 100,
@@ -106,7 +106,7 @@ console.log('Type Breakdown:', report.typeBreakdown);
 ### CommonJS
 
 ```javascript
-const { auditRepo } = require('@h3i5enberg/git-commit-audit');
+const { auditRepo } = require('@nirajsatam/git-commit-audit');
 
 const report = auditRepo(process.cwd());
 console.log(report);
@@ -117,7 +117,7 @@ console.log(report);
 You can also use lower-level functions independently:
 
 ```typescript
-import { parseGitHistory, evaluateCommits } from '@h3i5enberg/git-commit-audit';
+import { parseGitHistory, evaluateCommits } from '@nirajsatam/git-commit-audit';
 
 // 1. Safely extract structured commit records
 const commits = parseGitHistory(process.cwd(), 50);

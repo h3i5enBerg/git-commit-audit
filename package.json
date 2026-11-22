@@ -1,5 +1,5 @@
 {
-  "name": "@h3i5enberg/git-commit-audit",
+  "name": "@nirajsatam/git-commit-audit",
   "version": "1.0.0",
   "description": "Zero-runtime-dependency Git commit history auditor and Conventional Commits health checker.",
   "type": "module",
@@ -14,7 +14,7 @@
     }
   },
   "bin": {
-    "git-commit-audit": "./bin/cli.js"
+    "git-commit-audit": "bin/cli.js"
   },
   "files": [
     "dist",
